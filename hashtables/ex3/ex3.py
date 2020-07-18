@@ -3,7 +3,19 @@ def intersection(arrays):
     YOUR CODE HERE
     """
     # Your code here
+    result = []
+    storage = {}
 
+    for arr in arrays:
+        for num in arr:
+            if num in storage:
+                storage[num] += 1
+            else:
+                storage[num] = 1
+
+    for num, count in storage.items():
+        if count == len(arrays):
+            result.append(num)
     return result
 
 
